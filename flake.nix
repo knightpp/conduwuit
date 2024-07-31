@@ -13,6 +13,15 @@
     liburing = { url = "github:axboe/liburing?ref=master"; flake = false; };
   };
 
+  nixConfig = {
+    extra-substituters = [
+      "https://attic.kennel.juneis.dog/conduwuit"
+    ];
+    extra-trusted-public-keys = [
+      "conduwuit:BbycGUgTISsltcmH0qNjFR9dbrQNYgdIAcmViSGoVTE="
+    ];
+  };
+
   outputs = inputs:
     inputs.flake-utils.lib.eachDefaultSystem (system:
     let
